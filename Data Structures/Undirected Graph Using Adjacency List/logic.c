@@ -7,7 +7,8 @@
 
 void init(Graph *graph, int vertices){
     graph->vertices = vertices;
-    
+    graph->edges = 0;
+
     graph->adjacency_list = (Node **)malloc(vertices * sizeof(Node *));
     for(int i = 0; i < vertices; i++){
         graph->adjacency_list[i] = NULL;
@@ -99,7 +100,7 @@ void create_graph_from_file(Graph *graph, char *filename){
         for(int j = 0; j < vertices; j++){
             int weight;
             fscanf(file, "%d", &weight);
-            if(weight && i <= j){
+            if(weight && i < j){
                 add_edge(graph, i, j, weight);
             }
         }
@@ -294,7 +295,7 @@ void swap_edges(Edge *edge1, Edge *edge2){
     *edge2 = temp;
 }
 
-void partion(Edge *edges, int edge_count, int *pivot){
+void partition(Edge *edges, int edge_count, int *pivot){
     int i = 0, j = edge_count - 1;
     Edge p = edges[0];
     while(i < j){
@@ -309,7 +310,7 @@ void partion(Edge *edges, int edge_count, int *pivot){
 void sort_edges(Edge *edges, int edge_count){
     if(edge_count <= 1) return;
     int pivot;
-    partion(edges, edge_count, &pivot);
+    partition(edges, edge_count, &pivot);
     sort_edges(edges, pivot);
     sort_edges(edges + pivot + 1, edge_count - pivot - 1);
 }
@@ -451,7 +452,7 @@ Edge **shortest_path_from_source_dijkstras_algorithm(Graph graph, int start_vert
             shortest_paths[i][j].end_vertex = current_vertex;
             int weight = 0;
             Node *temp = graph.adjacency_list[parent[current_vertex]];
-            while(temp->vertex != current_vertex){
+            while(temp && temp->vertex != current_vertex){
                 temp = temp->next;
             }
             weight = temp->weight;
