@@ -2,7 +2,6 @@
 #include "stack.h"
 #include "queue.h"
 
-
 void init(BST *root){
     *root = NULL;
 }
@@ -461,8 +460,8 @@ void store_nodes_in_array(BST root, Node *array[], int *index){
     if(!root) return;
 
     store_nodes_in_array(root->right, array, index);
-    array[*(index)] = root;
-    *(index)++;
+    array[*index] = root;
+    (*index)++;
     store_nodes_in_array(root->left, array, index);
 }
 
