@@ -82,7 +82,7 @@ void selection_sort(int arr[], int n){
 ### Insights
 Selection sort is another slow sorting algorithm with a time complexity of O(n^2) in all cases. It is not suitable for large data sets due to its poor performance. The algorithm performs better on nearly sorted data compared to random or reverse-sorted data.
 
-### Insertion Sort
+# Insertion Sort
 
 Insertion sort is a simple sorting algorithm that builds the final sorted list one item at a time. It iterates through the list, removing one element at a time and finding the correct position to insert it in the sorted part of the list. The algorithm is efficient for small data sets and is more efficient than bubble sort and selection sort.
 
