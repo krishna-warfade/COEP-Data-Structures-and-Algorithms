@@ -24,6 +24,10 @@ void bubble_sort(int arr[], int n){
 - Average Case: O(n^2) : When the list is in random order.
 - Worst Case: O(n^2) : When the list is in reverse order.
 
+## Space Complexity
+- Space Complexity: **O(1)**  
+Bubble sort is an in-place algorithm. Only uses a constant extra variable.
+
 ## Performance
 
 | Data Set Size | Time (ms) |
@@ -64,6 +68,10 @@ void selection_sort(int arr[], int n){
 - Best Case: O(n^2) : When the list is in reverse order.
 - Average Case: O(n^2) : When the list is in random order.
 - Worst Case: O(n^2) : When the list is already sorted.
+
+## Space Complexity
+- Space Complexity: **O(1)**  
+Selection sort is an in-place sorting algorithm. It uses a constant amount of extra memory.
 
 ## Performance
 
@@ -106,6 +114,10 @@ void insertion_sort(int arr[], int n){
 - Best Case: O(n) : When the list is already sorted.
 - Average Case: O(n^2) : When the list is in random order.
 - Worst Case: O(n^2) : When the list is in reverse order.
+
+## Space Complexity
+- Space Complexity: **O(1)**  
+Insertion sort is an in-place algorithm. Only uses a constant extra variable.
 
 ## Performance
 
@@ -156,6 +168,13 @@ void quick_sort(int arr[], int n){
 - Average Case: O(n log n) : When the pivot divides the array into two parts of nearly equal size.
 - Worst Case: O(n^2) : When the pivot is the smallest or largest element in the array.
 
+## Space Complexity
+- Best Case: **O(log n)** - When the pivot divides the array into two equal parts.
+- Average Case: **O(log n)** - When the pivot divides the array into two parts of nearly equal size.
+- Worst Case: **O(n)** - When the pivot is the smallest or largest element in the array.
+
+Quick sort is in-place, but _recursion_ uses stack space.
+
 ## Performance
 
 | Data Set Size | Time (ms) |
@@ -200,6 +219,10 @@ void heap_sort_max_heap(int *array, int size){
 - Best Case: O(n log n) : When the input array is already a heap.
 - Average Case: O(n log n) : When the input array is random.
 - Worst Case: O(n log n) : When the input array is reverse sorted.
+
+## Space Complexity
+- Space Complexity: **O(1)**  
+Heapsort is an in-place algorithm. It does not require extra arrays and uses only a few variables for heap operations.
 
 ## Performance
 
