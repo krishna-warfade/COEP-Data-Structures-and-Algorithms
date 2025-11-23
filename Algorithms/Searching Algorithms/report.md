@@ -34,6 +34,9 @@ T(n) = 1/n * n(n+1)/2
 T(n) = (n+1)/2
 T(n) = O(n)
 ```
+### Space Complexity
+- Space Complexity: **O(1)**
+Linear search is an in-place algorithm. Uses only a single loop variable.
 
 ### Testing
 
@@ -98,6 +101,13 @@ k = log n
 
 3. Average Case: O(log n)
 
+### Space Complexity
+- Space Complexity (_Iterative_): **O(1)**
+The iterative binary search uses only fixed variables (low, mid and high). Hence requires constant extra space.
+
+- Space Complexity (_Recursive_): **O(log n)**
+Each recursive binary search call adds a new stack frame (local variables, return address and parameters). This implies using logarithmic space.
+
 ### Testing
 
 The binary search algorithm was tested on arrays of different sizes with a randomly chosen key. The time taken for each test case was recorded.
@@ -125,7 +135,7 @@ The binary search algorithm has a time complexity of O(log n) in the worst case,
 
 In conclusion, linear search and binary search are two fundamental searching algorithms with different time complexities. Linear search has a time complexity of O(n) in the worst case, while binary search has a time complexity of O(log n) in the worst case. Binary search is preferable over linear search when the data is sorted because of its lower time complexity. The choice of algorithm depends on the size of the data and whether it is sorted or unsorted.
 
-### Questions for deeper understanding
+## Questions for deeper understanding
 
 **Why is binary search more efficient than linear search on sorted data?**
 Binary search eliminates half of the remaining elements in each step, resulting in a time complexity of O(log n) in the worst case. In contrast, linear search has a time complexity of O(n) in the worst case because it sequentially checks each element of the array. Therefore, binary search is more efficient than linear search on sorted data.
